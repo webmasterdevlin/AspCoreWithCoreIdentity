@@ -1,0 +1,20 @@
+﻿@model HomeViewModel
+@foreach (var cake in Model.Cakes)
+{
+    <div class="container">
+        <div class="row">
+            <div class="card" style="width: 21.25rem;">
+                <img class="card-img-top" src="@cake.ImageThumbnailUrl" alt="Card image cap">
+                <div class="card-body">
+                    <p class="card-title center">@cake.Name</p>
+                    <p class="card-text center">@cake.ShortDescription</p>
+                    <div class="m-5 p-5 right">
+                        <a class="btn btn-primary" asp-controller="Home" asp-action="Details"
+                           asp-route-id="@cake.Id">@cake.Price.ToString("C")</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+}
